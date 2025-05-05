@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Young Mike | Web Developer Portfolio</title>
+    <style>
+        /* CSS Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary-color: #4361ee;
+            --secondary-color: #3f37c9;
+            --accent-color: #4cc9f0;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --success-color: #4bb543;
+            --warning-color: #ffcc00;
+            --danger-color: #f44336;
+        }
+        body {
+            background-color: #120f49;
+            background-image: radial-gradient(whitesmoke #120f49);
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+
+     
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        h1, h2, h3 {
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            text-align: center;
+            padding: 120px 0;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        /* About Section */
+        .about {
+            background-color: white;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .skills-list {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        .skills-list li {
+            margin-bottom: 0.8rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .skills-list li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+        }
+
+        /* Case Study Section */
+        .case-study {
+            background-color: #f9f9f9;
+        }
+
+        .case-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .case-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .case-content ul {
+            list-style: none;
+        }
+
+        .case-content li {
+            margin-bottom: 0.8rem;
+            position: relative;
+            padding-left: 1.2rem;
+        }
+
+        .case-content li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+        }
+
+        /* Project Showcase Section */
+        .projects {
+            background-color: white;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-image {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .project-info {
+            padding: 1.5rem;
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-description {
+            color: #666;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tag {
+            background-color: #eef2ff;
+            color: var(--primary-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: #f9f9f9;
+        }
+
+        .contact-methods {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .contact-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info p {
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .contact-form .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .contact-form textarea {
+            min-height: 150px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .copyright {
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .about-content,
+            .contact-methods {
+                grid-template-columns: 1fr;
+            }
+
+            .case-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .project-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            section {
+                padding: 60px 0;
+            }
+
+            .hero {
+                padding: 80px 0;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">Young Mike</a>
+                <div class="nav-links">
+                    <a href="#about">About</a>
+                    <a href="#case-study">Case Study</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Web Developer & UI Specialist</h1>
+            <p>I build responsive, accessible, and performant websites with clean code and thoughtful design.</p>
+            <div class="cta-buttons">
+                <a href="#projects" class="btn btn-primary">View My Work</a>
+                <a href="#contact" class="btn btn-outline">Hire Me</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="bio">
+                    <h3>Hi, I'm Young Mike</h3>
+                    <p>I'm an IT student specializing in frontend web development with a passion for creating intuitive digital experiences.</p>
+                    
+                    <p>My technical skills include:</p>
+                    <ul class="skills-list">
+                        <li>HTML5 & Semantic Markup</li>
+                        <li>CSS3 & Responsive Design</li>
+                        <li>JavaScript (ES6+)</li>
+                        <li>Cross-Browser Compatibility</li>
+                        <li>Performance Optimization</li>
+                        <li>UI/UX Principles</li>
+                        <li>Git Version Control</li>
+                    </ul>
+                    
+                    <p>I build websites from the ground up with attention to detail, ensuring they're fast, accessible, and work perfectly across all devices.</p>
+                </div>
+                <div class="education">
+                    <h3>Education & Background</h3>
+                    <p><strong>Kirinyaga University</strong><br>
+                    Bachelor of Science in Information Technology<br>
+                    Expected Graduation: 2027</p>
+                    
+                    <p><strong>Certifications:</strong><br>
+                    • Coursera Web Development Certification on progress 60%<br>
+                    
+                    <p><strong>Currently Learning:</strong><br>
+                    • Advanced JavaScript Patterns<br>
+                    • React Framework<br>
+                    • Backend Integration</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Study Section -->
+    <section class="case-study" id="case-study">
+        <div class="container">
+            <h2>Project Case Study: E-Commerce Demo</h2>
+            <div class="case-content">
+                <div class="challenge">
+                    <h3>Project Goals</h3>
+                    <ul>
+                        <li>Demonstrate core web development skills without frameworks</li>
+                        <li>Create a fully responsive e-commerce interface</li>
+                        <li>Implement modern UI/UX principles</li>
+                        <li>Ensure accessibility and performance</li>
+                        <li>Showcase clean, maintainable code structure</li>
+                    </ul>
+                </div>
+                <div class="solution">
+                    <h3>Technical Implementation</h3>
+                    <ul>
+                        <li><strong>Mobile-First Approach:</strong> Responsive design using Flexbox and CSS Grid</li>
+                        <li><strong>Performance:</strong> Optimized assets and efficient CSS architecture</li>
+                        <li><strong>Accessibility:</strong> Semantic HTML, ARIA labels, keyboard navigation</li>
+                        <li><strong>Interactivity:</strong> Vanilla JavaScript for modals, forms, and cart functionality</li>
+                        <li><strong>Cross-Browser:</strong> Tested on Chrome, Firefox, Safari, Edge</li>
+                    </ul>
+                </div>
+                <div class="results">
+                    <h3>Key Achievements</h3>
+                    <ul>
+                        <li>100% responsive on all device sizes</li>
+                        <li>Lighthouse performance score of 95+</li>
+                        <li>Fully functional without JavaScript frameworks</li>
+                        <li>Clean, commented code for easy maintenance</li>
+                        <li>WCAG 2.1 AA accessibility compliance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <div class="project-header">
+                <h2>My Projects</h2>
+                <a href="https://github.com/1234young/HTML-CSS-Course" class="btn btn-outline" target="_blank">
+                    <i class="fab fa-github"></i> View All Projects
+                </a>
+            </div>
+            
+            <div class="project-grid">
+                <!-- E-Commerce Demo Project -->
+                <div class="project-card">
+                    <img src="/digitech/screenshot03.png" alt="E-Commerce Demo" class="project-image">
+                    <div class="project-info">
+                        <h3 class="project-title">E-Commerce Website</h3>
+                        <p class="project-description">A fully responsive e-commerce demo built with pure HTML, CSS, and JavaScript showcasing product listings, user authentication, and shopping cart functionality.</p>
+                        
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Responsive Design</span>
+                        </div>
+                        
+                        <div class="project-links">
+                            <a href="#case-study" class="btn btn-outline">Case Study</a>
+                            <a href="" class="btn btn-primary" target="_blank">
+                                <i class="fas fa-code"></i> View Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Add more project cards as needed -->
+                <div class="project-card">
+                    <img src="/digitech/screenshot01.png" alt="Project 2" class="project-image">
+                    <div class="project-info">
+                        <h3 class="project-title">Portfolio Website</h3>
+                        <p class="project-description">A clean, modern portfolio template with smooth animations and responsive layout.</p>
+                        
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        
+                        <div class="project-links">
+                            <a href="#" class="btn btn-outline">Details</a>
+                            <a href="#" class="btn btn-primary" target="_blank">
+                                <i class="fas fa-code"></i> View Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Add placeholder for future projects -->
+                <div class="project-card">
+                    <img src="" alt="Coming Soon" class="project-image">
+                    <div class="project-info">
+                        <h3 class="project-title">More Projects Coming Soon</h3>
+                        <p class="project-description">I'm constantly working on new projects to expand my skills and portfolio.</p>
+                        
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">Node.js</span>
+                        </div>
+                        
+                        <div class="project-links">
+                            <a href="#contact" class="btn btn-outline">Get Updates</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="/digitech/screenshot02.png" alt="Number Conversion Web App" class="project-image">
+                    <div class="project-info">
+                        <h3 class="project-title">Number Conversion Web App</h3>
+                        <p class="project-description">A clean, modern number conversion template with smooth animations and responsive layout.</p>
+                        
+                        <div class="project-tech">
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        
+                        <div class="project-links">
+                            <a href="#contact" class="btn btn-outline">Get Updates</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p>I'm currently available for freelance projects, internships, or full-time positions. Let's discuss how I can contribute to your team!</p>
+            
+            <div class="contact-methods">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p><i class="fas fa-envelope"></i> youngmike703@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +254 757813837</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</p>
+                    
+                    <h3 style="margin-top: 2rem;">Connect With Me</h3>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/feed/?legoTrackingToken=c34ZpnFFkTBxr71PqmgCc2UMfmlOrSdjtOoZsC5gr6litOoZp6Zdr6litOoVejAVejRApnhPpnlNpl9JtmUCjAZ9l4BjjR0Zuk9OpmhOjThBpShFtOpQrClQrCBvsClHpmlPnS9LqBYOtChxs6xzrDlxr3RAinhBpShFtOoMfmVLqnhFsSZgt6lDp6BT9z0Kc3RBsCZzkT9D9zROol1Ipl9OpOoZp6Zdr6lisCsCc3RKrSBQqndLk71RrT9D9zAVejAVfmhBt7dBtn5BkCRRjD1RrT9D9DhItm5CpmgZp4BMtmZOpOpejQBkildfk3RVgD9Bp79L9DhItm5CpmgZp4BQrClJpSlP9DhKpnhKqjRAinhLr7cCt6NRompBp3RAinhRrTBxr2oOtChxs6xzrDlxr3RBrm5epmtxs2pEt7tLsCsZp4BMs64CcPcMc3AOfmh9rCZFsT9BtyoSdjcSdzgSdj8Nfmh9tipzcSoPc39BpzgRejAJcPsNoyQUoSoQbmpyd3cJe39CdzgNej0Zp4BQu6lQrCZz" target="_blank">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="https://github.com/1234young/HTML-CSS-Course" target="_blank">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="https://twitter.com/youngmike703@gmail.com" target="_blank">
+                            <i class="fab fa-twitter"></i> Twitter
+                        </a>
+                    </div>
+                </div>
+                
+                <form class="contact-form" id="hireForm">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Company/Organization</label>
+                        <input type="text" id="company">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">How Can I Help You?</label>
+                        <textarea id="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#about">About</a>
+                <a href="#case-study">Case Study</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+                <a href="https://github.com/1234young/HTML-CSS-Course" target="_blank">GitHub</a>
+            </div>
+            <p class="copyright">© <span id="year"></span> Young Mike. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Current year for footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Form submission
+        document.getElementById('hireForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            
+            // In a real application, you would send this data to your backend
+            console.log('Form submitted:', { 
+                name: name,
+                company: document.getElementById('company').value,
+                email: email,
+                message: document.getElementById('message').value
+            });
+            
+            // Show success message
+            alert(`Thank you, ${name}! I've received your message and will contact you at ${email} soon.`);
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
