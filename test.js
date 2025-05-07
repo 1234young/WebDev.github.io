@@ -69,6 +69,22 @@
     // const rectangle = new Rectangle(60,35);
     // console.log(rectangle.area);
 
+   /* let numbers = [10,3,4,2,7,8,6,9,5,1];
+    numbers.sort((a,b) => b-a);
+    console.log(numbers);*/
+
+   /* const people = [{name:"Mike Kay", age:21, nationality:"Italy"},
+                    {name:"Malo Gusto", age:21, nationality:"France"},
+                    {name:"Enzo Fernandez", age:24, nationality:"Argentina"},
+                    {name:"Trent Anorld", age:25, nationality:"England"},
+                    {name:"Marc Cucurella", age:26, nationality:"Spain"}]
+
+    people.sort((a,b) => a.name.localeCompare( b.name));
+    console.log(people);  */
+    
+    const date = new Date();
+    console.log(date);
+
 
 
 

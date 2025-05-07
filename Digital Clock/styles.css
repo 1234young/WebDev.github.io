@@ -1,0 +1,25 @@
+body{
+    margin: 0;
+    box-sizing: border-box;
+    background-image: url(../digitech/city2.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+#clock-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+#clock{
+    font-family: monospace;
+    font-size: 6.5rem;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    
+    backdrop-filter: blur(2px);
+    background-color: hsla(0, 75%, 77%, 0.096);
+}

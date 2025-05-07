@@ -1,0 +1,66 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+.digital{
+    color: hsla(240, 83%, 62%, 0.795);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 4now 0px;
+}
+
+.stopwatch-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.display {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.buttons button {
+    font-size: 1em;
+    padding: 10px 20px;
+    margin: 0 5px; /* Adjusted margin slightly */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#startStopBtn {
+    background-color: #5cb85c;
+    color: white;
+}
+
+#startStopBtn:hover {
+    background-color: #4cae4c;
+}
+
+#pauseBtn {
+    background-color: #f0ad4e; /* Orange color for pause */
+    color: white;
+}
+
+#pauseBtn:hover {
+    background-color: #ec971f;
+}
+
+
+#resetBtn {
+    background-color: #d9534f;
+    color: white;
+}
+
+#resetBtn:hover {
+    background-color: #c9302c;
+}
