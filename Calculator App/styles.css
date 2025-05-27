@@ -1,0 +1,101 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #e0e0e0;
+    margin: 0;
+}
+
+.calculator {
+    background-color: #333;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    width: 300px;
+    max-width: 90%; /* Make it responsive */
+}
+
+.display {
+    background-color: #1c1c1c;
+    color: #fff;
+    font-size: 2.5em;
+    padding: 20px;
+    text-align: right;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px; /* Small gap between buttons */
+}
+
+.btn {
+    background-color: #505050;
+    border: none;
+    padding: 20px;
+    font-size: 1.5em;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    outline: none;
+}
+
+.btn:active {
+    background-color: #666;
+}
+
+.btn.operator {
+    background-color: #ff9500;
+}
+
+.btn.operator:active {
+    background-color: #f28500;
+}
+
+.btn.clear {
+    background-color: #d4d4d2;
+    color: #000;
+}
+
+.btn.clear:active {
+    background-color: #c1c1bf;
+}
+
+.btn.equals {
+    background-color: #ff9500;
+    grid-row: span 2; /* Make equals button span two rows */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn.equals:active {
+    background-color: #f28500;
+}
+
+.btn.zero {
+    grid-column: span 2; /* Make zero button span two columns */
+}
+
+/* Basic responsiveness */
+@media (max-width: 400px) {
+    .calculator {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .display {
+        font-size: 2em;
+        padding: 15px;
+    }
+
+    .btn {
+        padding: 15px;
+        font-size: 1.3em;
+    }
+}

@@ -61,7 +61,6 @@ function reset() {
     startStopBtn.innerHTML = "Start";
     startTime = null;
 }
-
 function getShowTime() {
     updatedTime = new Date().getTime();
     // Calculate the current difference
@@ -70,14 +69,20 @@ function getShowTime() {
     let hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     let minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
     let seconds = Math.floor((difference % (1000 * 60)) / 1000);
-    // Optional: Add milliseconds if needed
-    // let milliseconds = Math.floor((difference % 1000));
+    let milliseconds = Math.floor((difference % 1000));
 
     hours = (hours < 10) ? "0" + hours : hours;
     minutes = (minutes < 10) ? "0" + minutes : minutes;
     seconds = (seconds < 10) ? "0" + seconds : seconds;
-    // milliseconds = (milliseconds < 100) ? (milliseconds < 10) ? "00" + milliseconds : "0" + milliseconds : milliseconds;
+    milliseconds = (milliseconds < 100) ? (milliseconds < 10 ? "00" + milliseconds : "0" + milliseconds) : milliseconds;
 
-
-    display.innerHTML = hours + ":" + minutes + ":" + seconds; // + ":" + milliseconds;
+    // Update the display with the format HH:MM:SS:ms
+    display.innerHTML = hours + ":" + minutes + ":" + seconds + ":" + milliseconds;
 }
+
+    difference = document.getElementById('display').innerHTML = hours + ":" + minutes + ":" + seconds + "." + milliseconds;
+
+    // Optional: Add milliseconds if needed
+    
+
+   

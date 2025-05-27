@@ -82,8 +82,27 @@
     people.sort((a,b) => a.name.localeCompare( b.name));
     console.log(people);  */
     
-    const date = new Date();
-    console.log(date);
+    //const date = new Date();
+    //EVENTLISTENERS
+   /* const emo = document.getElementById("myBox");
+    function changeColor(event){
+      event.target.style.background = "tomato";
+      event.target.textContent ="OUCH!!! 😒😒😒😩"; 
+    }
+    emo.addEventListener("click",changeColor);
+    emo.addEventListener("mouseover",event => {
+      event.target.style.backgroundColor = "green";
+       event.target.textContent = "Don't do it!!!";
+
+    })
+    emo.addEventListener("mouseout",event => {
+      event.target.style.backgroundColor = "purple";
+       event.target.textContent = "I did it!!!";
+    })*/
+
+
+
+
 
 
 
