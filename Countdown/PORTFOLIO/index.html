@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal-Portfolio website, Tutorials</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://kit.fontawesome.com/f16f489acd.js" crossorigin="anonymous"></script>
+</head>
+<body>
+   
+    
+    <div class="container">
+      
+ 
+       <nav>
+         <img src="/Images/download.png"class="logo">
+         <ul id="sidemenu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#"> Services</a></li>
+            <li><a href="#"> Portfolio</a></li>
+            <li><a href="#"> Contact</a></li>
+            <i class="fa-solid fa-circle-xmark" onclick="closemenu()"></i>
+
+         </ul>
+         <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+        </nav>
+          
+    </div>
+    <div class="container2">
+      <div class="header-text">
+        <p>Web Designer</p>
+        <h1>Hi! I'm <span>Mike</span>  Kay<br>  from Kenya.</h1>
+       </div> 
+       <div id=header></div>
+
+
+    </div>
+    <!-------------about---------------->
+    <div id="about">
+      <div class="row">
+          <div class="about-col-1">
+            <img src="/Images/IMG_20231221_141543_975~2.jpg">
+          </div>
+          <div class="about-col-2">
+              <h1>About Me</h1>
+              <p>I'm an intermediate web developer and designer currently pursuing Information Technology at Kirinyaga University.My main goal and aim is to become a highly skilled web developer and designer, that is, a <strong>profession</strong> in the field of <span>web development and design</span> which is an excellent field of IT.</p>
+              <div class="tab-title">
+                <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                <p class="tab-links " onclick="opentab('experience')">Experience</p>
+                <p class="tab-links " onclick="opentab('education')">Education</p>
+              </div>
+              <div class="tab-contents active-tab" id="skills">
+                <ul>
+                  <li><span>UI/UX</span><br> Designing Web/App Interfaces</li>
+                  <li><span>Web Development</span><br> Web App development.</li>
+                  <li><span>App Development</span><br> Building Android and OS Apps.</li>
+                </ul>
+              </div>
+              <div class="tab-contents" id="experience">
+                <ul>
+                  <li><span>Current</span><br> UI/UX Design Training at ET Institute</li>
+                  <li><span>2023-2026</span><br>Team Lead at StarApp LLC. </li>
+                  <li><span>2020-2023</span><br> UI/UX Executive at Coin Digital Ltd.</li>
+                </ul>
+              </div>
+              <div class="tab-contents" id="education">
+                <ul>
+                  <li><span>2019</span><br>UI/UX Design Training at ET Institute </li>
+                  <li><span>2018</span><br>MBA From MIT Bangalore. </li>
+                  <li><span>2017</span><br>BBA From ISB Bangalore. </li>
+                </ul>
+              </div>
+          </div>
+        
+      </div>
+    </div>
+    <!-----------service---------->
+    <div class="services">
+      <div classs="container3">
+        <h1 id="sub-title">My Services</h1>
+       <div class="service-list"> 
+        <div>
+          <i class="fa-solid fa-code"></i>
+          
+          <h2>Web Design</h2>
+          <p>Lorem ipsum dolor sit camet consectur adipisicing elit. Qula, cumque! </p>
+          <a href="#">Learn More</a>
+        </div>
+        <div>
+          <i class="fa-solid fa-crop"></i>
+          <h2>UI/UX Design</h2>
+          <p>Lorem ipsum dolor sit camet consectur adipisicing elit. Qula, cumque! </p>
+          <a href="#">Learn More</a>
+        </div>
+        <div>
+          <i class="fa-brands fa-app-store-ios"></i>
+            <h2>App Design</h2>
+            <p>Lorem ipsum dolor sit camet consectur adipisicing elit. Qula, cumque! </p>
+            <a href="#">Learn More</a>
+        </div>
+        </div>
+      </div> 
+      </div>
+    </div>
+    <!---------Portfolio----------->
+    <div id="portfolio">
+      <div class="container4">
+        <h1 id="sub-title">My Work</h1>
+        <div class="work-list">
+          <div class="work">
+            <img src="/Photos/pexels-jakubzerdzicki-29942709.jpg">
+            <div class="layer">
+              <h3>Social Media App</h3>
+              <p>The app connects you to the talented people in the world. Download it from playstore.></p>
+              <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+          
+            </div>
+          </div>
+          <div class="work">
+            <img src="/Photos/pexels-pixabay-221179.jpg">
+            <div class="layer">
+              <h3>Music  App</h3>
+              <p>The app connects you to the talented people in the world. Download it from playstore.  </p>
+              <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+            
+            </div>
+          </div>
+          <div class="work">
+            <img src="/Photos/pexels-shvetsa-3987026.jpg">
+            <div class="layer">
+              <h3>Online Shopping App</h3>
+              <p>The app connects you to the talented people in the world. Download it from playstore. </p>
+              <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+            
+            </div>
+          </div>
+          
+
+        </div>
+        <a href="#" class="btn">See More</a>
+      </div>
+
+    </div>
+
+    <div id="contact">
+      <div class="container5">
+        <div class="row">
+          <div class="contact-left">
+            <h1 class="sub-title">Contact Me</h1>
+            <p> <i class="fa-solid fa-paper-plane"></i> youngmike703@gmail.com</p>
+            <p> 0748213630</p>
+            <div class="social-icons">
+              <a href="https://facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+              <a href="https://twitter.com/"><i class="fa-brands fa-twitter-square"></i></a>
+              <a href="https://instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+              <a href="https://linkedin.com/"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+            <a href="COUNTDOWN\PORTFOLIO\document\cv.pdf" download="My_CV" class="btn btn2">Download CV</a>
+
+          </div>
+          <div class="contact-right">
+            <form action="">
+              <input type="text" name="Name" placeholder="Your Name" required>
+              <input type="email" name="email" placeholder="Your email" required>
+              <textarea type="Message" rows="6" placeholder="Your Message"></textarea>
+              <button type="submit" class="btn btn2">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>CopyRight <i class="fa-solid fa-copyright"></i> Mike. Made with <i class="fa-solid fa-heart"></i> by easy Tutorials</p>
+
+      </div>
+    
+    
+
+  <script>
+    var tablinks = document.getElementsByClassName("tab-links")
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname){
+      for(tablink of tablinks){
+        tablink.classList.remove("active-link");
+      }
+      for(tabcontent of tabcontents){
+        tabcontent.classList.remove("active-tab");
+      }
+      event.currentTarget.classList.add("active-link");
+      document.getElementById(tabname).classList.add("active-tab");
+    }
+    
+
+
+  </script>
+  <script>
+    var sidemenu = document.getElementById("sidemenu");
+
+    function openmenu(){
+      sidemenu.style.right = '0';
+
+    }
+    
+    function closemenu(){
+      sidemenu.style.right = "-200px";
+      
+    }
+  </script>
+ 
+</body>
+</html>
